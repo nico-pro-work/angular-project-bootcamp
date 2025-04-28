@@ -1,9 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .page {
-    padding: 20px;  
+  padding: 20px;
+}
+
+/**  Notification styles */
+
+.mat-mdc-simple-snack-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .mat-mdc-snack-bar-label {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.error-snackbar {
+  .mat-mdc-simple-snack-bar {
+    background-color: #f44336 !important; /* Material Design error color */
+    color: #ffffff; /* White text for contrast */
+    font-size: 14px;
+    text-align: center;
+    // padding: 8px 16px;
+    border-radius: 4px;
+  }
+  .mdc-snackbar__surface {
+    padding: 0 !important;
+  }
 }

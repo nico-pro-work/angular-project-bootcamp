@@ -6,6 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { ApiService } from '@services/api/api.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { NotificationService } from '@services/notification.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,5 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     ApiService,
     CommonModule,
+    NotificationService
   ],
 };
