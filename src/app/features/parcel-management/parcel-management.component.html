@@ -1,3 +1,28 @@
 <div class="parcel-management-page page">
-  <h2>This is the parcel management page</h2>
+  <div class="sub-header">
+  <h2>Parcel management</h2>
+
+    <div class="actions">
+      <button mat-raised-button>Add Item</button>
+      <button mat-raised-button>Delete Selected</button>
+    </div>
+  </div>
+
+  <div class="parcel-list">
+    <div *ngFor="let parcel of parcels" class="parcel-card">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ parcel.name }}</mat-card-title>
+          <mat-card-subtitle>{{ parcel.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ parcel.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>View</button>
+          <button mat-button>Edit</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>
