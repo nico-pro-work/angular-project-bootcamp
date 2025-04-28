@@ -1,0 +1,11 @@
+<div class="home-page page">
+  <h1>This is the home page</h1>
+
+  <div class="card-container">
+    <div *ngFor="let page of pageList" class="card">
+      <h2>{{ page.title }}</h2>
+      <p>{{ page.description }}</p>
+      <button (click)="navigateToPage(page.path)">Go to {{ page.title }}</button>
+    </div>
+  </div>
+</div>

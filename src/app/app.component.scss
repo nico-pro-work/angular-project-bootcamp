@@ -1,0 +1,38 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffc400;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    gap: 1rem;
+
+    .nav-item {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1rem;
+      transition: color 0.3s;
+      cursor: pointer;
+
+
+      &:hover, .active {
+        color: #ffc400;
+      }
+    }
+  }
+}
+
