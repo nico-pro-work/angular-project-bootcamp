@@ -10,7 +10,7 @@ body {
 }
 
 .page {
-  padding: 20px;
+  height: 100%;
 }
 
 /**  Notification styles */
@@ -27,16 +27,33 @@ body {
   }
 }
 
-.error-snackbar {
-  .mat-mdc-simple-snack-bar {
-    background-color: #f44336 !important; /* Material Design error color */
-    color: #ffffff; /* White text for contrast */
-    font-size: 14px;
-    text-align: center;
-    // padding: 8px 16px;
-    border-radius: 4px;
-  }
-  .mdc-snackbar__surface {
-    padding: 0 !important;
-  }
+/**
+  * notification styles
+  */
+.mat-mdc-simple-snack-bar {
+  color: #ffffff; /* White text for contrast */
+  font-size: 14px;
+  text-align: center;
+  // padding: 8px 16px;
+  border-radius: 4px;
+}
+.mdc-snackbar__surface {
+  padding: 0 !important;
+}
+
+.error-snackbar .mat-mdc-simple-snack-bar {
+  background-color: #f44336 !important; /* Material Design error color */
+}
+
+.success-snackbar .mat-mdc-simple-snack-bar {
+  background-color: #4caf50 !important; /* Material Design success color */
+}
+
+/**
+  * Custom styles for the drawer
+  */
+
+.mat-drawer-container {
+  height: 100%;
+  padding: 20px;
 }

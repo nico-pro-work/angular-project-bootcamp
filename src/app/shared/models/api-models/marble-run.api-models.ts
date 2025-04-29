@@ -10,11 +10,16 @@ export interface GetParcelByIdResponse {
  * Create Parcel interface
  */
 export interface CreateParcelResponse {
-  id: string;
+  id: number;
+  name: string;
+  volume: number;
+  owner: ParcelOwner;
 }
 
 export interface CreateParcelBody {
-  id: string;
+  name: string;
+  volume: number;
+  owner: ParcelOwner;
 }
 
 /**
@@ -36,4 +41,12 @@ export interface DeleteParcelResponse {
 }
 export interface DeleteParcelBody {
   id: string;
+}
+
+/**
+ * Common Parcel interface
+ */
+export interface ParcelOwner {
+  id?: string;
+  name: string;
 }

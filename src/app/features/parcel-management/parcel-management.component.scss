@@ -1,23 +1,45 @@
 .parcel-management-page {
-    .sub-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
+  height: calc(100vh - 115px);
 
-        .actions {
-            margin-left: auto;
-            display: flex;
-        gap: 10px;
+  .sub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 
-            align-items: center;
-        }
+    .actions {
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+
+      align-items: center;
     }
+  }
 
-    .parcel-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+  .parcel-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /**
+    * Drawer styles
+    */
+
+  .drawer-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .drawer-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

@@ -34,4 +34,14 @@ export class NotificationService {
       panelClass: ['error-snackbar'],
     });
   }
+
+  showSuccess(
+    message: string,
+    action: string = 'Close',
+  ): void {
+    this.snackBar.open(message, action, {
+      ...this.snackBarConfig,
+      panelClass: ['success-snackbar'],
+    });
+  }
 }

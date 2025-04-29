@@ -19,9 +19,9 @@ export class MarbleRunApiService {
   getParcelById(id: string | number): Observable<GetParcelByIdResponse> {
     return this.apiService.get(`parcel/${id.toString()}`);
   }
-//   createParcel(data: CreateParcelBody): Observable<CreateParcelResponse> {
-//     return this.apiService.post(`parcel/${id.toString()}`);
-//   }
+  createParcel(data: CreateParcelBody): Observable<CreateParcelResponse> {
+    return this.apiService.post(`parcel`, data);
+  }
 //   updateParcel(data: UpdateParcelBody): Observable<UpdateParcelResponse> {
 //     return this.apiService.put(`parcel/${id.toString()}`);
 //   }
