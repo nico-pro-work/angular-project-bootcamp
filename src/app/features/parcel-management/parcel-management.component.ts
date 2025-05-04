@@ -4,7 +4,6 @@ import { ParcelManagementItem } from '@models/parcel-management.models';
 import { MarbleRunApiService } from '@services/api';
 import { NotificationService } from '@services/notification.service';
 import { Subscription } from 'rxjs';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
@@ -17,19 +16,20 @@ import {
   Validators,
 } from '@angular/forms';
 import { CreateParcelBody } from '@models/api-models';
+import { ParcelItemComponent } from "./parcel-item/parcel-item.component";
 
 @Component({
   selector: 'app-parcel-management',
   imports: [
     CommonModule,
-    MatCardModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-  ],
+    ParcelItemComponent
+],
   providers: [MarbleRunApiService],
   templateUrl: './parcel-management.component.html',
   styleUrl: './parcel-management.component.scss',
@@ -53,6 +53,7 @@ export class ParcelManagementComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.parcels = this.marbleRunApiService.localApiParcel();
     // this.subscription.add(
     //   this.marbleRunApiService.getParcelById('0').subscribe({
     //     next: (response) => {
@@ -69,7 +70,7 @@ export class ParcelManagementComponent implements OnInit {
     // );
   }
 
-  onSubmit(): void {
+  onCreateParcel(): void {
     if (this.itemForm.valid) {
       const { name, quantity } = this.itemForm.value;
       const formData: CreateParcelBody = {
@@ -109,6 +110,28 @@ export class ParcelManagementComponent implements OnInit {
       console.error('Form is invalid');
     }
   }
+
+  onDeleteParcel(id: number): void {
+    this.subscription.add(
+      this.marbleRunApiService.deleteParcel(id).subscribe({
+        next: () => {
+          this.notificationService.showSuccess(
+            'Parcel deleted successfully',
+            id.toString()
+          );
+          this.parcels = this.parcels.filter((parcel) => parcel.id !== id);
+        },
+        error: (error) => {
+          this.notificationService.showError(
+            'Error deleting parcel',
+            error.message
+          );
+          console.error('Error deleting parcel:', error);
+        },
+      })
+    );
+  }
+
 
   toggleNewItemDrawer(): void {
     this.drawer?.open();

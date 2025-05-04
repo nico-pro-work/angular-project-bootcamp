@@ -1,3 +1,9 @@
 .home-page {
-    
+    padding: 10px;
+
+    .todo-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }

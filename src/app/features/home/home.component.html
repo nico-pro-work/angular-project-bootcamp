@@ -1,11 +1,33 @@
 <div class="home-page page">
   <h2>This is the home page</h2>
 
-  <div class="card-container">
-    <div *ngFor="let page of pageList" class="card">
-      <h2>{{ page.title }}</h2>
-      <p>{{ page.description }}</p>
-      <button (click)="navigateToPage(page.path)">Go to {{ page.title }}</button>
-    </div>
+  <h3>TODO List</h3>
+  <div class="todo-list">
+    <mat-checkbox
+      (change)="handleCheckboxChange($event, 1)"
+      [checked]="checkboxData[1]"
+      >Implement the update of a parcel</mat-checkbox
+    >
+    <mat-checkbox
+      (change)="handleCheckboxChange($event, 2)"
+      [checked]="checkboxData[2]"
+      >Add the owner management page (with all the CRUD
+      interaction)</mat-checkbox
+    >
+    <mat-checkbox
+      (change)="handleCheckboxChange($event, 3)"
+      [checked]="checkboxData[3]"
+      >Add the owner API service to interact with the backend</mat-checkbox
+    >
+    <mat-checkbox
+      (change)="handleCheckboxChange($event, 4)"
+      [checked]="checkboxData[4]"
+      >Test the application thoroughly</mat-checkbox
+    >
+    <mat-checkbox
+      (change)="handleCheckboxChange($event, 5)"
+      [checked]="checkboxData[5]"
+      >Deploy the application to production</mat-checkbox
+    >
   </div>
 </div>

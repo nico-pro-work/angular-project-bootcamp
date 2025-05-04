@@ -1,5 +1,16 @@
-<div class="parcel-item">
-  <span class="title">Title</span>
-  <span class="description">Description</span>
-  <span class="quantity">Quantity</span>
-</div>
+<mat-card class="parcel-item">
+  <mat-card-header>
+    <mat-card-title>
+      {{ data.name }} - 
+      <span class="item-id">id: {{ data.id }}</span>
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ data.quantity }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+      <mat-icon class="actions-item edit" (click)="handleEditParcel()">edit</mat-icon>
+      <mat-icon class="actions-item delete" (click)="handleDeleteParcel()">delete</mat-icon>
+  </mat-card-actions>
+</mat-card>

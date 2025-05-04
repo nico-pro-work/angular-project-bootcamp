@@ -1,0 +1,1 @@
+export const IS_LOCAL_API = true; // Set to true for local API, false for remote API

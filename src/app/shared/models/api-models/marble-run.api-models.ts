@@ -26,21 +26,24 @@ export interface CreateParcelBody {
  * Update Parcel interface
  */
 export interface UpdateParcelResponse {
-  id: string;
+  id: number;
+  name: string;
+  volume: number;
+  owner: ParcelOwner;
 }
 
 export interface UpdateParcelBody {
-  id: string;
+  name: string;
+  volume: number;
+  owner: ParcelOwner;
 }
 
 /**
  * Delete Parcel interface
  */
 export interface DeleteParcelResponse {
-  id: string;
 }
 export interface DeleteParcelBody {
-  id: string;
 }
 
 /**
